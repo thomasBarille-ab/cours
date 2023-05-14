@@ -1,0 +1,13 @@
+import jenkins.*;
+import jenkins.model.*;
+import jenkins.model.JenkinsLocationConfiguration;
+import jenkins.model.Jenkins;
+import hudson.*;
+import hudson.model.*;
+import hudson.tools.*;
+import hudson.slaves.EnvironmentVariablesNodeProperty;
+import hudson.tasks.Maven.MavenInstaller;
+import hudson.tasks.Maven.MavenInstallation;
+import hudson.model.Node.Mode;
+import hudson.slaves.*;
+import hudson.slaves.JNLPLauncher;

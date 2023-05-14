@@ -1,0 +1,24 @@
+[ats-header]
+
+author -> agilitest
+created -> 2018-04-26 at 08:24:59
+
+[ats-variables]
+
+
+[ats-actions]
+
+channel-start -> newChannel -> $param(0,chrome)
+comment -> The channel is started and now we can execute some actions ...
+goto-url -> https://www.actiontestscript.com/demo/samples.html
+click -> INPUT [type = button, value = 7]
+click -> INPUT [type = button, value = x]
+click -> INPUT [type = button, value = 8]
+click -> INPUT [type = button, value = &eq;]
+keyboard -> Bill -> INPUT [name = fname]
+keyboard -> Gates -> INPUT [name = lname]
+scroll -> 450
+select -> text = Mercedes -> SELECT [@index = 1, text =~ Volvo\s*Saab\s*Mercedes\s*Audi]
+property-get -> value => rangeValue -> INPUT [name = range]
+scripting -> value=10 -> INPUT [name = range]
+channel-close -> newChannel

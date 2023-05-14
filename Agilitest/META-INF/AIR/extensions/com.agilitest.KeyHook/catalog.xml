@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.16.1" build="20171115" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="_ef803e56f455f37fac1dff4694544a1e980b39d1cae367316ce71661891b2fb0_flash_display_Sprite" mod="1674075800424" signatureChecksum="2005826127" >
+        <def id="_ef803e56f455f37fac1dff4694544a1e980b39d1cae367316ce71661891b2fb0_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+      </script>
+      <script name="com/agilitest/KeyHook" mod="1674075770015" signatureChecksum="3286775262" >
+        <def id="com.agilitest:KeyHook" /> 
+        <dep id="com.agilitest:KeyHookEvent" type="e" /> 
+        <dep id="trace" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:EventDispatcher" type="i" /> 
+      </script>
+      <script name="com/agilitest/KeyHookEvent" mod="1674060522366" signatureChecksum="1077243843" >
+        <def id="com.agilitest:KeyHookEvent" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:ProgressEvent" type="i" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="c425f5972bf6db77bab749fbc8ff21f655d2285dbca7fa4fa91df40d78c1abe8"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

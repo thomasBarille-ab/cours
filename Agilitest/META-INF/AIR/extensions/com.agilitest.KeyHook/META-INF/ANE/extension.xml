@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="http://ns.adobe.com/air/extension/32.0">
+	<id>com.agilitest.KeyHook</id>
+	<name>KeyHook capture</name>
+	<copyright></copyright>
+	<versionNumber>1.0.0</versionNumber>
+	<platforms>
+	<platform name="Windows-x86-64">
+		<applicationDeployment>
+			<nativeLibrary>KeyHook64.dll</nativeLibrary>
+			<initializer>KeyHookANEinitializer</initializer>
+			<finalizer>KeyHookANEfinalizer</finalizer>
+		</applicationDeployment>
+	</platform>
+	</platforms>
+</extension>

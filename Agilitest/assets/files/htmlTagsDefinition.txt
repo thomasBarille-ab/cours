@@ -1,0 +1,120 @@
+<a>;Defines a hyperlink;true;false
+<abbr>;Defines an abbreviation or an acronym;true;false
+<acronym>;Defines an acronym;false;false
+<address>;Defines contact information for the author/owner of a document;true;false
+<applet>;Defines an embedded applet;false;false
+<area>;Defines an area inside an image-map;true;false
+<article>;Defines an article;true;false
+<aside>;Defines content aside from the page content;true;false
+<audio>;Defines sound content;true;false
+<b>;Defines bold text;true;false
+<base>;Specifies the base URL/target for all relative URLs in a document;true;false
+<basefont>;Specifies a default color, size, and font for all text in a document;false;true
+<bdi>;Isolates a part of text that might be formatted in a different direction from other text outside it;true;false
+<bdo>;Overrides the current text direction;true;false
+<big>;Defines big text;false;true
+<blockquote>;Defines a section that is quoted from another source;true;false
+<body>;Defines the document's body;true;false
+<br>;Defines a single line break;true;false
+<button>;Defines a clickable button;true;false
+<canvas>;Used to draw graphics, on the fly, via scripting;true;false
+<caption>;Defines a table caption;true;false
+<center>;Defines centered text;false;true
+<cite>;Defines the title of a work;true;false
+<code>;Defines a piece of computer code;true;false
+<col>;Specifies column properties for each column within a <colgroup> element ;true;false
+<colgroup>;Specifies a group of one or more columns in a table for formatting;true;false
+<datalist>;Specifies a list of pre-defined options for input controls;true;false
+<dd>;Defines a description/value of a term in a description list;true;false
+<del>;Defines text that has been deleted from a document;true;false
+<details>;Defines additional details that the user can view or hide;true;false
+<dfn>;Represents the defining instance of a term;true;false
+<dialog>;Defines a dialog box or window;true;false
+<dir>;Defines a directory list;false;false
+<div>;Defines a section in a document;true;false
+<dl>;Defines a description list;true;false
+<dt>;Defines a term/name in a description list;true;false
+<em>;Defines emphasized text ;true;false
+<embed>;Defines a container for an external (non-HTML) application;true;false
+<fieldset>;Groups related elements in a form;true;false
+<figcaption>;Defines a caption for a <figure> element;true;false
+<figure>;Specifies self-contained content;true;false
+<font>;Defines font, color, and size for text;false;true
+<footer>;Defines a footer for a document or section;true;false
+<form>;Defines an HTML form for user input;true;false
+<frame>;Defines a window (a frame) in a frameset;false;false
+<frameset>;Defines a set of frames;false;false
+<h1>;Defines HTML headings;true;false
+<h2>;Defines HTML headings;true;false
+<h3>;Defines HTML headings;true;false
+<h4>;Defines HTML headings;true;false
+<h5>;Defines HTML headings;true;false
+<h6>;Defines HTML headings;true;false
+<head>;Defines information about the document;true;false
+<header>;Defines a header for a document or section;true;false
+<hr>;Defines a thematic change in the content;true;false
+<html>;Defines the root of an HTML document;true;false
+<i>;Defines a part of text in an alternate voice or mood;true;false
+<iframe>;Defines an inline frame;true;false
+<img>;Defines an image;true;false
+<input>;Defines an input control;true;false
+<ins>;Defines a text that has been inserted into a document;true;false
+<kbd>;Defines keyboard input;true;false
+<keygen>;Defines a key-pair generator field (for forms);true;false
+<label>;Defines a label for an <input> element;true;false
+<legend>;Defines a caption for a <fieldset> element;true;false
+<li>;Defines a list item;true;false
+<link>;Defines the relationship between a document and an external resource;true;false
+<main>;Specifies the main content of a document;true;false
+<map>;Defines a client-side image-map;true;false
+<mark>;Defines marked/highlighted text;true;false
+<menu>;Defines a list/menu of commands;true;false
+<menuitem>;Defines a command/menu item that the user can invoke from a popup menu;true;false
+<meta>;Defines metadata about an HTML document;true;false
+<meter>;Defines a scalar measurement within a known range (a gauge);true;false
+<nav>;Defines navigation links;true;false
+<noframes>;Defines an alternate content for users that do not support frames;false;false
+<noscript>;Defines an alternate content for users that do not support client-side scripts;true;false
+<object>;Defines an embedded object;true;false
+<ol>;Defines an ordered list;true;false
+<optgroup>;Defines a group of related options in a drop-down list;true;false
+<option>;Defines an option in a drop-down list;true;false
+<output>;Defines the result of a calculation;true;false
+<p>;Defines a paragraph;true;false
+<param>;Defines a parameter for an object;true;false
+<pre>;Defines preformatted text;true;false
+<progress>;Represents the progress of a task;true;false
+<q>;Defines a short quotation;true;false
+<rp>;Defines what to show in browsers that do not support ruby annotations;true;false
+<rt>;Defines an explanation/pronunciation of characters (for East Asian typography);true;false
+<ruby>;Defines a ruby annotation (for East Asian typography);true;false
+<s>;Defines text that is no longer correct;true;false
+<samp>;Defines sample output from a computer program;true;false
+<script>;Defines a client-side script;true;false
+<section>;Defines a section in a document;true;false
+<select>;Defines a drop-down list;true;false
+<small>;Defines smaller text;true;false
+<source>;Defines multiple media resources for media elements (<video> and <audio>);true;false
+<span>;Defines a section in a document;true;false
+<strong>;Defines important text;true;false
+<style>;Defines style information for a document;true;false
+<sub>;Defines subscripted text;true;false
+<summary>;Defines a visible heading for a <details> element;true;false
+<sup>;Defines superscripted text;true;false
+<table>;Defines a table;true;false
+<tbody>;Groups the body content in a table;true;false
+<td>;Defines a cell in a table;true;false
+<textarea>;Defines a multiline input control;true;false
+<tfoot>;Groups the footer content in a table;true;false
+<th>;Defines a header cell in a table;true;false
+<thead>;Groups the header content in a table;true;false
+<time>;Defines a date/time;true;false
+<title>;Defines a title for the document;true;false
+<tr>;Defines a row in a table;true;false
+<track>;Defines text tracks for media elements (<video> and <audio>);true;false
+<tt>;Defines teletype text;false;true
+<u>;Defines text that should be stylistically different from normal text;true;false
+<ul>;Defines an unordered list;true;false
+<var>;Defines a variable;true;false
+<video>;Defines a video or movie;true;false
+<wbr>;Defines a possible line-break;true;false

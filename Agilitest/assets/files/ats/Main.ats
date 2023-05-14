@@ -1,0 +1,19 @@
+[ats-header]
+
+author -> agilitest
+created-at -> 2018-04-26 at 17:12:41
+prerequisite -> 
+description -> 
+groups -> 
+
+[ats-variables]
+
+
+[ats-actions]
+
+subscript -> sample.Subscript [chrome]
+comment -> script -> Call subscript and passing parameter 'chrome' now
+subscript -> sample.Subscript [msedge]
+comment -> script -> Call subscript and passing parameter 'firefox' now
+subscript -> sample.Subscript [firefox]
+comment -> script -> End of multi browser execution

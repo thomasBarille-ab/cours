@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenkins Configuration</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: dimgrey;
+            padding: 50px;
+        }
+
+        .alignCenter {
+            text-align: center;
+        }
+
+        h3, a {
+            display: inline-block;
+            font-weight: lighter;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .errorsTable {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 30px 0px;
+        }
+
+        .errorsTable td, .errorsTable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .statusColumn {
+            width:3vw;
+        }
+
+        .docColumn{
+            width:15vw;
+        }
+
+        th a {
+            color:white;
+            font-weight: bold;
+        }
+
+        .statusOK, .statusError, .statusWarning, .agilitestLogo {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .statusError {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAn5JREFUeNpkU01IVUEU/ub+vaflDz0pbJEuCsyoiKRAKRdSQRtbhJugqKCNtoygXcv2ui0o2hSRbQwjISNFy59Q8ocK1OBJ4uv5Xpp63313Ot9cb1gNzD33nPN935k5M6Pwz+hvrO/SYXhNa52MY0qpDWVZ95sHp9q3YwUDFTtvmw6dhev07j3ZhN3HG+BVVAiCbMDP5bA0OoL08ABQCM6dHvj06i8Bkr1UVe/By1dhr2Twa7APhZlJhOtrsEp2wK07jNLGFhQrU5h++AB+ZtmIUCCq3nxUr718plfu3NCLZ+p0+lSNLrx7rTlo6TPOPHHExytwuOfa1osoDvXBn/xgKupiCKepxYjTWm4CSuIm7zogvr9Q6JJ0uxUC13elKhFMjMJOlsJJJGHLDOY+GwFa+iYueeKIJ495S2bC/vYVSgCW58FyXAGWIPg4HAmIpc8488QRT14koERjJQvbFbJNAU8qisDESCQglj7jzBNHvOFxi3LIULms2edWZ8zU40PInz8mFROwdpYL0oXB8mRzWfNvVqAV/EA+tidLdBypYkOFRSSu3ER5z7ix9BlnnjjiyTMCy37QvZRflQKJaBvcq2XDu3DJVKClb3ojeeKIJ88ItA1P35pPf8dmIEfnRSLsut/92AjQ0jdkyRNHPHlRD4CFN5l8hz0129lwpB4lySS0bUH3PkfY8xSOLW0qK4cSgfWNDYxNzYJ48mIB3J1eeGQ6PjbRub+2BtXVe+CkyqKGSrOCzU0sStUvc/Po//GzI8Yjeip/hrQaB56cqLtd5TqtwvbixyQff7kQvGh7P3NPHN6w/H+vcdvYJzO1dcniIRcPmXjZ25/zbwEGAGFgG+lMOaZnAAAAAElFTkSuQmCC");
+        }
+
+        .statusWarning {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA7VBMVEUAAAD///8AAACocxuk bhj/+dCjbhijbxv/3IP/shb/24KibhrxuFL/uSL/uiP/uCH/3YGibRr/337/uyn/wCoHFzv/uif/ 3n3/33z/vSz/vi//xy8ZJkX/xi//vi6jbRn/4Hj/wTL/wDT/wjX/yzQkMFCocxz/9Zv/yDb/xDn/ xDv/xjv/zjktOlr/4m//zD7/yT//yj//0T0zQmWjbRvwwU7/0UT/zkT/1ETKoTr/0ET/5mr/1Uv/ 10oRHUf/1kn/1Er/5WrwxE3/20//2k3/2k7/5maibBr/6GP/4FX/52OkbRv/8Gaocx7///+sgHdE AAAAA3RSTlMAADNFpqXIAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+QMBAoXCuNSYTwAAACvSURBVBjT Y2CAAGYozQilWVjZUATYOTi5uJEE2Hl4+fgFBOEC3ELCIqIiYuKCUAFBCUkpaRlZOUkJQbCAvIKi krKKqoqykqKCPFBATV1DU0tbR1dHW0tTQ12NkYFJXk/fwNDI2MjQQF9PngmohcnE1MzcwtLC3MrU hAlsKJOJtY2tnb2DI5APsZbJxMnZxdXNnQnuMCYTD08vMB/mdCZvHxMmFM8x+TKh+paBCeZ9AEba Eap0n59VAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTEyLTA0VDEwOjIzOjA1KzAwOjAwtRLb0QAA ACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0xMi0wNFQxMDoyMzowNSswMDowMMRPY20AAAAZdEVYdFNv ZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAAElFTkSuQmCC");
+        }
+
+        .statusOK {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtFBMVEX///8AAAAAAABGiQBB hgDu+JHk9IOasgDl9YGbuACatwCbtwDc9G9HiQBChgDb83KavACZvACbvQDS8l/U8l7U8l9ChQDS 8WCbwQCawACbwgDS8mDN8E6bxgCbxQDK709AgwCaxQCcxgDL8E9IiQDE7zybyQCZyACayQC96Tya yACbygDC7j5DhgBEhgC56y2czwCazQCZzACw6R2d0wCa0QCp5wud2ABFhgCr6QtJiQD///9b864P AAAAA3RSTlMAADNFpqXIAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+QMBAoZCwrWfCQAAACXSURBVBjT Zc/XFoJADATQJIDYWHsXwQ6Wpdf//zABV88enbc7L5kA/AalKAqiXKiapsqF2tL1tgKSO91evy4M ozYbDEfjCSNANp0xxPliuVpvGCEYW3Nn2bZl7g/Hygin8+XquK5zuz+elRGIe34QhoHvNa7OEo/i JIkj3rjeQTzNslS4GUZ5UeTC76VUlh+L6fQ1/n3/AnBbC85UxRZjAAAAJXRFWHRkYXRlOmNyZWF0 ZQAyMDIwLTEyLTA0VDEwOjI1OjExKzAwOjAwgOmPGwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0x Mi0wNFQxMDoyNToxMSswMDowMPG0N6cAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlx yWU8AAAAAElFTkSuQmCC");
+        }
+
+        .agilitestLogo {
+            height: 64px;
+            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Calque_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 197.2 100.7' style='enable-background:new 0 0 197.2 100.7;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23F0AF00;%7D .st1%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%231A171C;%7D .st2%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;%7D .st3%7Bfill:%231A171C;%7D .st4%7Bfill:none;stroke:%231A171C;stroke-width:7.294;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M151,39.3v39.5c0,0,34.1,1.8,36.5,8.5c2.4,6.7,6-4.3,6-4.3s1.2-22.5-10.8-31C170.8,43.6,151,39.3,151,39.3'/%3E%3Cpath class='st1' d='M129.3,44.4c-1.8,0-5.4,0.7-6.6,2.8c-2.7,4.7-8.5,5.9-13.8,4.2c-4.2-1.4-8-7.1-7-11.7 c1.4-6.1-2.2-5.1-4.3-10.6c7.4,3.5,13.8,0.5,22.3,4.5c3,1.4,8,3.8,8.7,3.8'/%3E%3Cpath class='st1' d='M113.7,45.2c0.6,0,1.2,0,1.8,0c1-1.4,3.1-2.9,2.8-4c-0.4-1.5-2.4-2.6-3.7-3.9c-1.2,1.3-3.1,2.4-3.4,3.8 C111,42.3,112.8,43.8,113.7,45.2'/%3E%3Cpath class='st2' d='M120.6,42.6c0,4-3.2,7.2-7.2,7.2c-4,0-7.2-3.2-7.2-7.2c0-4,3.2-7.2,7.2-7.2C117.4,35.5,120.6,38.7,120.6,42.6' /%3E%3Cpath class='st1' d='M120.1,41.2c0,3.1-2.5,5.7-5.7,5.7c-3.1,0-5.7-2.5-5.7-5.7c0-3.1,2.5-5.7,5.7-5.7 C117.6,35.5,120.1,38.1,120.1,41.2'/%3E%3Cpath class='st2' d='M114.3,40.5c-0.3,1.5-1.3,2.5-2.2,2.3c-0.9-0.2-1.5-1.5-1.2-3c0.3-1.5,1.3-2.5,2.2-2.3 C114,37.7,114.5,39,114.3,40.5'/%3E%3Cpath class='st3' d='M69.5,30.1H23.6c-1.5-4.9-6.1-8.4-11.5-8.4C5.4,21.7,0,27.1,0,33.8c0,6.7,5.4,12.1,12.1,12.1 c5.4,0,9.9-3.5,11.5-8.4h45.9c2,0,3.6-1.6,3.6-3.6C73.1,31.8,71.5,30.1,69.5,30.1 M12.1,38.5c-2.6,0-4.8-2.1-4.8-4.8 c0-2.6,2.1-4.8,4.8-4.8c2.6,0,4.8,2.1,4.8,4.8C16.8,36.4,14.7,38.5,12.1,38.5'/%3E%3Cpath class='st3' d='M91.1,52.6H45c-1.5-4.9-6.1-8.4-11.5-8.4c-6.7,0-12.1,5.4-12.1,12.1c0,6.7,5.4,12.1,12.1,12.1 c5.4,0,9.9-3.5,11.5-8.4h46.1c2,0,3.6-1.6,3.6-3.6C94.7,54.2,93.1,52.6,91.1,52.6 M33.5,61c-2.6,0-4.8-2.1-4.8-4.8 c0-2.6,2.1-4.8,4.8-4.8c2.6,0,4.8,2.1,4.8,4.8C38.3,58.8,36.2,61,33.5,61'/%3E%3Cpath class='st3' d='M192.2,58.9c-9-17.3-25.6-20.1-31.9-21.2c-0.4-0.1-0.8-0.1-1.2-0.2c-0.2-0.3-0.5-0.7-0.7-1 c-2.1-3-6-8.7-13.4-16.1C133.3,8.7,113.2,8.5,112.4,8.5H65.1C63.6,3.6,59,0,53.6,0C47,0,41.5,5.4,41.5,12.1S47,24.1,53.6,24.1 c5.3,0,9.9-3.5,11.5-8.3h47.3c0.2,0,17.8,0.1,27.4,9.7c6.9,6.9,10.6,12.2,12.6,15.1c0.9,1.3,1.4,2,2,2.6c1.1,1.1,2.4,1.3,4.7,1.7 c5.8,1,19.3,3.3,26.6,17.3c5,9.6,4.6,18.2,3.4,23.6c-4.5-4.9-12.1-11.2-21.2-11.2H65.2c-1.6-4.9-6.1-8.4-11.5-8.4 c-6.7,0-12.1,5.4-12.1,12.1c0,6.7,5.4,12.1,12.1,12.1c5.4,0,10-3.6,11.5-8.5H168c10.6,0,19.4,13.4,19.5,13.5l3.4,5.3l2.9-5.6 C194.1,94.4,202.2,78.1,192.2,58.9 M53.6,16.8c-2.6,0-4.8-2.1-4.8-4.8s2.1-4.8,4.8-4.8c2.6,0,4.8,2.1,4.8,4.8S56.2,16.8,53.6,16.8 M53.7,83c-2.6,0-4.8-2.1-4.8-4.8c0-2.6,2.1-4.8,4.8-4.8c2.6,0,4.8,2.1,4.8,4.8C58.5,80.9,56.4,83,53.7,83'/%3E%3Cline class='st4' x1='126.6' y1='40.8' x2='157.3' y2='40.8'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .errorsTable tr:nth-child(even){background-color: #f2f2f2;}
+
+        .errorsTable tr:hover {background-color: #ddd;}
+
+        .errorsTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: grey;
+            color: white;
+        }
+
+        .tableTitle {
+            font-weight: bold;
+        }
+
+        .moreInfoNode {
+            margin-left: 1vw;
+        }
+    </style>
+</head>
+<body>
+<div class="agilitestLogo alignCenter"></div>
+<h1 class="alignCenter">Jenkins configuration for Agilitest</h1>
+<p class="alignCenter">Report generated at: ##TODAY##</p>
+<br />
+<a class="alignCenter" href="##SUPPORTURL##" target="_blank">Online documentation for Jenkins</a><br />
+
+<h3>Server URL: </h3>
+<a href="##URLTOKEN##" target="_blank">##URLTOKEN##</a>
+
+<p>See below settings of the current Jenkins server.</p>
+
+<h2 class="tableTitle">Plugins</h2>
+<table id="errors" class="errorsTable">
+    <tr>
+        <th class="statusColumn">Status</th>
+        <th>Mandatory</th>
+        <th>Description</th>
+        <th class="docColumn">Support Documentation</th>
+    </tr>
+    ##PLUGINS##
+</table>
+
+<h2 class="tableTitle">Other</h2>
+<table id="warnings" class="errorsTable">
+    <tr>
+        <th class="statusColumn">Status</th>
+        <th>Description</th>
+        <th class="docColumn">Support Documentation</th>
+    </tr>
+    ##OTHER##
+</table>
+
+<h2 class="tableTitle">Nodes</h2>
+<a href="##SUPPORTURL##/#node_ko" target="_blank" class="moreInfoNode">More informations</a>
+<table id="nodes" class="errorsTable">
+    <tr>
+        <th class="statusColumn">Status</th>
+        <th>Name</th>
+        <th>Number of executors</th>
+        <th>Label (expected 'ats-executor')</th>
+        <th>Mode exclusive</th>
+        <th>Is online</th>
+    </tr>
+    ##NODES##
+</table>
+
+</body>
+</html>
